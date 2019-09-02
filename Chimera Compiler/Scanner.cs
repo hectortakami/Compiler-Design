@@ -41,7 +41,7 @@ namespace Chimera {
               | (?<MultiLineComment>    [/][*](.|\n)*[*][/]             )
               | (?<SingleLineComment>   [/][/](.)*                      )
               | (?<IntLiteral>          \d+                             )
-              | (?<StrLiteral>          [\""]([^\""]|[\""])*?[\""]      )
+              | (?<StrLiteral>          [""]([^""\n]|[""][""])*[""]     )
               | (?<Assignment>          [:][=]                          )
               | (?<Declaration>         [:]                             )
               | (?<ParLeft>             [(]                             )
@@ -59,7 +59,7 @@ namespace Chimera {
               | (?<Add>                 [+]                             )
               | (?<Substract>           [-]                             )
               | (?<Multiply>            [*]                             )
-              | (?<Separator>           [,]                             )          
+              | (?<COMMA>               [,]                             )          
               | (?<Newline>             \n                              )    
               | (?<EndOfLine>           [;]                             )              
               | (?<WhiteSpace>          \s        )     # Must go anywhere after Newline.
@@ -150,7 +150,7 @@ namespace Chimera {
                 {"Add", TokenCategory.ADD},
                 {"Substract", TokenCategory.SUB},
                 {"Multiply", TokenCategory.MUL},         
-                {"Separator", TokenCategory.PARAM_SEPARATOR},                         
+                {"COMMA", TokenCategory.COMMA},                         
 
             };
 

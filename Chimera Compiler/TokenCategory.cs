@@ -74,7 +74,7 @@ namespace Chimera {
       ADD,
       SUB,
       MUL,
-      PARAM_SEPARATOR,
+      COMMA,
       WRINT,
       WRSTR,
       WRBOOL,
