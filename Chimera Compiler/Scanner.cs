@@ -28,9 +28,8 @@ namespace Chimera {
     class Scanner {
 
         readonly string input;
-        /*
-                                 
-             /* | (?<StrLiteral>          ["]([^\\"]|\\")*["]             )
+                                        
+             /* 
                 | (?<Negation>            [-]                             )
 
              */
@@ -38,10 +37,11 @@ namespace Chimera {
 
         static readonly Regex regex = new Regex(
             @"  
-                (?<Identifier>          [a-zA-Z]+[_a-zA-Z0-9]           )
+                (?<Identifier>          [a-zA-Z]+?[_a-zA-Z0-9]*         )
               | (?<MultiLineComment>    [/][*](.|\n)*[*][/]             )
               | (?<SingleLineComment>   [/][/](.)*                      )
               | (?<IntLiteral>          \d+                             )
+              | (?<StrLiteral>          [\""]([^\""]|[\""])*?[\""]      )
               | (?<Assignment>          [:][=]                          )
               | (?<Declaration>         [:]                             )
               | (?<ParLeft>             [(]                             )
@@ -131,6 +131,7 @@ namespace Chimera {
         static readonly IDictionary<string, TokenCategory> nonKeywords =
             new Dictionary<string, TokenCategory>() {
                 {"IntLiteral", TokenCategory.INT_LITERAL},
+                {"StrLiteral", TokenCategory.STR_LITERAL},
                 {"EndOfLine", TokenCategory.EOL},
                 {"Assignment", TokenCategory.ASSIGN},
                 {"Declaration", TokenCategory.DECL},
@@ -149,7 +150,7 @@ namespace Chimera {
                 {"Add", TokenCategory.ADD},
                 {"Substract", TokenCategory.SUB},
                 {"Multiply", TokenCategory.MUL},         
-                {"Separator", TokenCategory.SEPARATOR},                         
+                {"Separator", TokenCategory.PARAM_SEPARATOR},                         
 
             };
 
