@@ -1,4 +1,4 @@
-Chimera compiler, version 0.4
+Chimera compiler, version 0.5
 ===============================
 
 This program is free software. You may redistribute it under the terms of
@@ -11,6 +11,7 @@ Included in this release:
    * Syntactic analysis
    * Abstract Syntax Tree
    * Semantic analysis
+   * CIL Code Generation
     
 To build, at the terminal type:
 
@@ -18,7 +19,7 @@ To build, at the terminal type:
    
 To run, type:
 
-    ./chimera.exe <file_name>
+    ./chimera.exe Chimera-Input/<file_name>
     
 Where <file_name> is the name of a Chimera source file. You can try with
 these files:
