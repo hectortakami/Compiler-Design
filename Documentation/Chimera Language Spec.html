@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://34.212.143.74/apps/s201913/tc3048/chimera_language_spec/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Chimera Language Spec</title>
+    
+
+<meta name="author" content="Ariel Ortiz">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./Chimera Language Spec_files/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="./Chimera Language Spec_files/w3pro.css">
+<link rel="stylesheet" href="./Chimera Language Spec_files/colores.css">
+<link rel="stylesheet" href="./Chimera Language Spec_files/estilos.css">
+<script src="./Chimera Language Spec_files/latest.js" async=""></script>
+
+  <script type="text/javascript" async="" src="./Chimera Language Spec_files/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+  <body class="w3-large" data-gr-c-s-loaded="true"><div id="MathJax_Message" style="display: none;"></div>
+
+  <nav id="menu_lateral" class="w3-sidebar w3-bar-block w3-card-4 w3-top w3-large w3-animate-left" style="display:none; z-index:2; width:25%; min-width:300px">   
+      
+    <a href="http://34.212.143.74/apps/s201913/" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button w3-red">
+      ArielOrtiz.info &nbsp;<i class="fa fa-home"></i>  
+    </a>  
+    
+    <a href="http://34.212.143.74/apps/s201913/tc3048/noticias/" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button w3-red">
+      News
+    </a>
+    
+<a href="http://34.212.143.74/apps/s201913/tc3048/asesoria/" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button">
+  Office Hours
+</a>
+
+<a href="http://34.212.143.74/apps/s201913/tc3048/calificaciones/" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button">
+  Grades <span class="fecha"> <i class="fa fa-arrow-right"></i>
+  03/Dec</span>
+</a>
+
+<a href="http://34.212.143.74/apps/s201913/tc3048/calendario/" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button">
+  Quiz/Exam Calendar
+</a>
+
+<a href="http://34.212.143.74/apps/s201913/tc3048/reglas/" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button">
+  Game Rules
+</a>
+
+<a href="http://34.212.143.74/apps/s201913/tc3048/recursos/" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button">
+  Online Resources
+</a>
+
+<a href="http://34.212.143.74/apps/s201913/tc3048/bibliografia/" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button">
+  Bibliography
+</a>
+
+<a href="http://34.212.143.74/apps/s201913/tc3048/blogs/" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button">
+  Student Blogs
+</a>
+
+<a href="https://samp.itesm.mx/Materias/VistaPreliminarMateria?clave=TC3048&amp;lang=EN" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button">
+  Syllabus <i class="fas fa-external-link-square-alt"></i>
+</a>
+
+<a href="https://github.com/ariel-ortiz/201913-tc3048.1" onclick="cerrar_menu_lateral()" class="w3-bar-item w3-button">
+  GitHub Repository <i class="fas fa-external-link-square-alt"></i>
+</a>
+    
+  </nav>
+  
+  <header>  
+    
+    <div class="w3-bar w3-theme-d3 w3-top">
+      <a class="w3-bar-item w3-button w3-large" onclick="abrir_menu_lateral()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a class="w3-bar-item w3-button w3-large" href="http://34.212.143.74/apps/s201913/tc3048/noticias/">
+        Compiler Design
+      </a>              
+    </div>
+    <div style="margin-top: 60px;"></div>
+  </header>        
+
+  <div style="max-width: 800px; margin: auto;" class="w3-panel w3-margin-top w3-padding-large">
+    
+
+    <img src="./Chimera Language Spec_files/chimera.png" width="128" height="128" alt="">
+
+    <h1>Chimera Language Spec</h1>
+
+    <p>
+        This document contains the technical specification of the Chimera programming language.
+    </p>
+
+    <br>
+
+    <h2>Contents</h2>
+
+    <ul>
+      <li><a class="normal" href="http://34.212.143.74/apps/s201913/tc3048/chimera_language_spec/#lexical">Lexical Elements</a></li>
+      <li><a class="normal" href="http://34.212.143.74/apps/s201913/tc3048/chimera_language_spec/#syntax">Syntax</a></li>
+      <li><a class="normal" href="http://34.212.143.74/apps/s201913/tc3048/chimera_language_spec/#semantics">Semantics</a></li>
+      <li><a class="normal" href="http://34.212.143.74/apps/s201913/tc3048/chimera_language_spec/#api">API Specification</a></li>
+      <li><a class="normal" href="http://34.212.143.74/apps/s201913/tc3048/chimera_language_spec/#examples">Source Code Examples</a></li>
+    </ul>
+
+    <p id="lexical"></p>
+    <br>
+
+    <h2>Lexical Elements</h2>
+
+    <p>
+        In the following sections, a letter is any character from the English alphabet from <code>A</code> to <code>Z</code> (both lowercase and uppercase). A digit is any character from <code>0</code> to <code>9</code>. In general, spaces, tabulators, and newlines are used as delimiters between lexical units, but are otherwise ignored.
+    </p>
+
+    <h3>Comments</h3>
+
+    <p>
+        There are two type of comments: line comments and block comments. Line comments start with two slashes <code>//</code> and conclude at the end of the line. Block comments start with a slash and an asterisk <code>/*</code> and end with an asterisk and a slash <code>*/</code>. Comments do not nest and cannot be placed inside string literals.
+    </p>
+
+    <h3>Identifiers</h3>
+
+    <p>
+        An identifier is composed of a letter and a sequence of zero or more letters, digits and the underscore character (<code>_</code>). Uppercase and lowercase letters are considered different. Identifiers can be of any length.
+    </p>
+
+    <h3>Integers</h3>
+
+    <p>
+        An integer literal is a sequence of one or more digits. Literals are in base ten. Their range is from 0 to 2<sup>31</sup> – 1.
+    </p>
+
+    <h3>Strings</h3>
+
+    <p>
+        A string literal es a sequence of zero or more characters delimited by double quotes, for example: <code>"this is a string"</code>. They cannot contain newline characters. A double quote character can be included in a string literal by using a pair of consecutive double quotes (<code>""</code>), for example: <code>"this is another ""string"""</code>. In this example, the corresponding string is really only comprised of the following characters: <code>this is another "string"</code>.
+    </p>
+
+    <h3>Booleans</h3>
+
+    <p>
+        Literal booleans are <code>true</code> and <code>false</code>.
+    </p>
+
+    <p id="syntax"></p>
+    <br>
+
+    <h2>Syntax</h2>
+
+    <p>
+        The <code class="ebnf">mono-space</code> elements represent terminal symbols (tokens).
+    </p>
+
+    <table class="w3-table w3-bordered w3-border">
+        <tbody><tr>
+            <td>‹<em>program</em>›</td>
+            <td>→</td>
+            <td>[ <code class="ebnf">const</code> ‹<em>constant-declaration</em>›+
+            ]<br>
+            [ <code class="ebnf">var</code> ‹<em>variable-declaration</em>›+ ]<br>
+            ‹<em>procedure-declaration</em>›*<br>
+            <code class="ebnf">program</code> ‹<em>statement</em>›*
+            <code class="ebnf">end</code> <code class="ebnf">;</code> </td>
+        </tr>
+        <tr>
+            <td>‹<em>constant-declaration</em>›</td>
+            <td>→</td>
+            <td>‹<em>identifier</em>› <code class="ebnf">:=</code> ‹<em>literal</em>›
+            <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>variable-declaration</em>›</td>
+            <td>→</td>
+            <td>‹<em>identifier</em>› ( <code class="ebnf">,</code> ‹<em>identifier</em>›
+            )* <code class="ebnf">:</code> ‹<em>type</em>›
+            <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>literal</em>›</td>
+            <td>→</td>
+            <td>‹<em>simple-literal</em>›
+            | ‹<em>list</em>›</td>
+        </tr>
+        <tr>
+            <td>‹<em>simple-literal</em>›</td>
+            <td>→</td>
+            <td>‹<em>integer-literal</em>›
+            <br>
+            | ‹<em>string-literal</em>›
+            <br>
+            | ‹<em>boolean-literal</em>›</td>
+        </tr>
+        <tr>
+            <td>‹<em>type</em>›</td>
+            <td>→</td>
+            <td>‹<em>simple-type</em>›
+            | ‹<em>list-type</em>›</td>
+        </tr>
+        <tr>
+            <td>‹<em>simple-type</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">integer</code> | <code class="ebnf">string</code> | <code class="ebnf">boolean</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>list-type</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">list</code> <code class="ebnf">of</code> ‹<em>simple-type</em>›</td>
+        </tr>
+        <tr>
+            <td>‹<em>list</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">{</code> [ ‹<em>simple-literal</em>›
+            ( <code class="ebnf">,</code> ‹<em>simple-literal</em>›
+            )* ] <code class="ebnf">}</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>procedure-declaration</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">procedure</code> ‹<em>identifier</em>› <br>
+            <code class="ebnf">(</code> ‹<em>parameter-declaration</em>›* <code class="ebnf">)</code>
+            [ <code class="ebnf">:</code> ‹<em>type</em>›
+            ] <code class="ebnf">;</code><br>
+            [ <code class="ebnf">const</code> ‹<em>constant-declaration</em>›+
+            ]<br>
+            [ <code class="ebnf">var</code> ‹<em>variable-declaration</em>›+ ]<br>
+            <code class="ebnf">begin</code> ‹<em>statement</em>›* <code class="ebnf">end</code> <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>parameter-declaration</em>›</td>
+            <td>→</td>
+            <td>‹<em>identifier</em>›
+            ( <code class="ebnf">,</code> ‹<em>identifier</em>›
+            )* <code class="ebnf">:</code> ‹<em>type</em>›
+            <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>statement</em>›</td>
+            <td>→</td>
+            <td>‹<em>assignment-statement</em>›
+            <br>
+            | ‹<em>call-statement</em>›
+            <br>
+            | ‹<em>if-statement</em>›
+            <br>
+            | ‹<em>loop-statement</em>›
+            <br>
+            | ‹<em>for-statement</em>›
+            <br>
+            | ‹<em>return-statement</em>›
+            <br>
+            | ‹<em>exit-statement</em>›</td>
+        </tr>
+        <tr>
+            <td>‹<em>assignment-statement</em>›</td>
+            <td>→</td>
+            <td>‹<em>identifier</em>› [ <code class="ebnf">[</code> ‹<em>expression</em>›
+            <code class="ebnf">]</code> ] <code class="ebnf">:=</code> ‹<em>expression</em>› <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>call-statement</em>›</td>
+            <td>→</td>
+            <td>‹<em>identifier</em>› <code class="ebnf">(</code> [ ‹<em>expression</em>›
+            ( <code class="ebnf">,</code> ‹<em>expression</em>› )* ] <code class="ebnf">)</code>
+            <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>if-statement</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">if</code> ‹<em>expression</em>› <code class="ebnf">then</code>
+            ‹<em>statement</em>›* <br>
+            ( <code class="ebnf">elseif</code> ‹<em>expression</em>› <code class="ebnf">then</code>
+            ‹<em>statement</em>›* )*<br>
+            [ <code class="ebnf">else</code>
+            ‹<em>statement</em>›* ] <code class="ebnf">end</code>
+            <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>loop-statement</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">loop</code>
+            ‹<em>statement</em>›* <code class="ebnf">end</code>
+            <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>for-statement</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">for</code> ‹<em>identifier</em>› <code class="ebnf">in</code> ‹<em>expression</em>› <code class="ebnf">do</code><br>
+            ‹<em>statement</em>›* <code class="ebnf">end</code> <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>return-statement</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">return</code> [ ‹<em>expression</em>› ] <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>exit-statement</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">exit</code> <code class="ebnf">;</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>expression</em>›</td>
+            <td>→</td>
+            <td>‹<em>logic-expression</em>›</td>
+        </tr>
+        <tr>
+            <td>‹<em>logic-expression</em>›</td>
+            <td>→</td>
+            <td>‹<em>logic-expression</em>›
+            ‹<em>logic-operator</em>›
+            ‹<em>relational-expression</em>›<br>
+            | ‹<em>relational-expression</em>›</td>
+        </tr>
+        <tr>
+            <td>‹<em>logic-operator</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">and</code> | <code class="ebnf">or</code> |
+            | <code class="ebnf">xor</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>relational-expression</em>›</td>
+            <td>→</td>
+            <td>‹<em>relational-expression</em>›
+            ‹<em>relational-operator</em>›
+            ‹<em>sum-expression</em>›<br>
+            | ‹<em>sum-expression</em>›
+            </td>
+        </tr>
+        <tr>
+            <td>‹<em>relational-operator</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">=</code> | <code class="ebnf">&lt;&gt;</code> | <code class="ebnf">&lt;</code> | <code class="ebnf">&gt;</code> |
+            <code class="ebnf">&lt;=</code> | <code class="ebnf">&gt;=</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>sum-expression</em>›</td>
+            <td>→</td>
+            <td>‹<em>sum-expression</em>›
+            ‹<em>sum-operator</em>›
+            ‹<em>mul-expression</em>›
+            <br>
+            | ‹<em>mul-expression</em>›
+            </td>
+        </tr>
+        <tr>
+            <td>‹<em>sum-operator</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">+</code> | <code class="ebnf">-</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>mul-expression</em>›</td>
+            <td>→</td>
+            <td>‹<em>mul-expression</em>›
+            ‹<em>mul-operator</em>›
+            ‹<em>unary-expression</em>›
+            <br>
+            |&nbsp; ‹<em>unary-expression</em>›</td>
+        </tr>
+        <tr>
+            <td>‹<em>mul-operator</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">*</code> | <code class="ebnf">div</code> | <code class="ebnf">rem</code></td>
+        </tr>
+        <tr>
+            <td>‹<em>unary-expression</em>›</td>
+            <td>→</td>
+            <td><code class="ebnf">not</code> ‹<em>unary-expression</em>›
+            <br>
+            | <code class="ebnf">-</code> ‹<em>unary-expression</em>›
+            <br>
+            | ‹<em>simple-expression</em>›</td>
+        </tr>
+        <tr>
+            <td>‹<em>simple-expression</em>›</td>
+            <td>→</td>
+            <td>( <code class="ebnf">(</code> ‹<em>expression</em>›
+            <code class="ebnf">)</code> | ‹<em>call</em>›
+            | ‹<em>identifier</em>›
+            | ‹<em>literal</em>›
+            )<br>
+            [ <code class="ebnf">[</code> ‹<em>expression</em>›
+            <code class="ebnf">]</code> ]</td>
+        </tr>
+        <tr>
+            <td>‹<em>call</em>›</td>
+            <td>→</td>
+            <td>‹<em>identifier</em>›
+            <code class="ebnf">(</code> [ ‹<em>expression</em>›
+            ( <code class="ebnf">,</code> ‹<em>expression</em>›
+            )* ] <code class="ebnf">)</code></td>
+        </tr>
+    </tbody></table>
+
+    <p id="semantics"></p>
+    <br>
+
+    <h2>Semantics</h2>
+
+    <h3>Generalities</h3>
+
+    <ul>
+        <li>
+            Every program written for the Chimera language starts its execution with the first statement after the <code>program</code> keyword.
+        </li>
+        <li>
+            An integer literal is of type <code>integer</code>. A string literal is of type <code>string</code>. A boolean literal is of type <code>boolean</code>. An empty list literal (<code>{}</code>) is compatible with any type of list.
+        </li>
+        <li>
+            All declared variables (local or global) take a default initial value:
+            <ul>
+                <li>
+                    <code>integer</code> variables are initialized with <code>0</code>.
+                </li>
+                <li>
+                    <code>boolean</code> variables are initialized with <code>false</code>.
+                </li>
+                <li>
+                    <code>string</code> variables are initialized with <code>""</code> (empty string).
+                </li>
+                <li>
+                    Lists of any type are initialized with <code>{}</code> (empty list).
+                </li>
+            </ul>
+        </li>
+        <li>
+            Non-empty list literals can only contain elements of the same type. Their type is <code>list</code> of the content type.
+        </li>
+        <li>
+            A list literal used in the <code>const</code> section must have at least one element.
+        </li>
+        <li>
+            Procedures that return a value do not require a <code>return</code> statement in order to end. If this statement is omitted, the return values should be the same as the default initial values for variables depending on the type of the procedure.
+        </li>
+        <li>
+            A program terminates if any runtime exception is raised.
+        </li>
+    </ul>
+
+    <h3>Statements</h3>
+
+    <p>
+        For the following descriptions, an <strong><em>l</em>-value</strong> must be an expression that refers to a variable or a list index expression (<code>lst[index]</code>). It cannot be a constant (an identifier declared in a <code>const</code> section of the program). In the case of <code>const</code> lists, the identifier referring to the list is what is constant, and not to the contents of the list itself.
+    </p>
+
+    <table class="w3-table w3-bordered w3-border">
+      <colgroup><col style="width: 200px">
+      <col>
+      </colgroup><tbody><tr>
+        <th>
+            Statement
+        </th>
+        <th>
+            Description
+        </th>
+
+    </tr>
+        <tr>
+            <td>
+                <em>l-value</em> <code>:=</code> <em>exp</em> <code>;</code>
+            </td>
+            <td>
+                Assign to <em>l-value</em> the result of evaluating <em>exp</em>. <em>l-value</em> must have been previously declared and must be the same type as <em>exp</em>.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <em>proc</em> <code>(</code> <em>args</em>, ...<code>)</code> <code>;</code>
+            </td>
+            <td>
+                Call procedure <em>proc</em>, evaluating (from left to right) and sending <em>args</em>, ... as its actual parameters. <em>proc</em> must have been previously declared and must not have a return type. The type and number of actual and formal parameters must match. Al parameters are passed by value.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>if</code> <em>exp<sub>1</sub></em> <code>then</code><br>
+                &nbsp; <em>stat<sub>1</sub></em>, ...<br>
+                ( <code>elseif</code> <em>exp<sub>2</sub></em> <code>then</code><br>
+                &nbsp; <em>stat<sub>2</sub></em>, ... )*<br>
+                [ <code>else</code><br>
+                &nbsp; <em>stat<sub>n</sub></em>, ...]<br>
+                <code>end</code> <code>;</code>
+            </td>
+            <td>
+                Evaluate <em>exp<sub>1</sub></em> and if it results <code>true</code>, execute all the statements <em>stat<sub>1</sub></em>, ... . Otherwise evaluate <em>exp<sub>2</sub></em> and if it results <code>true</code>, execute statements <em>stat<sub>2</sub></em>, ... , and so on. If none of <em>exp<sub>1</sub></em>, <em>exp<sub>2</sub></em>,
+                ... results <code>true</code>, execute the statements  <em>stat<sub>n</sub></em>, ... after the <code>else</code>, in case such section is present. All expressions <em>exp<sub>1</sub></em>, <em>exp<sub>2</sub></em>, ... must be of type <code>boolean</code>.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>loop</code> <em>stat</em>, ... <code>end</code> <code>;</code>
+            </td>
+            <td>
+                Execute repeatedly the statements <em>stat</em>, ... . To end the loop an <code>exit</code> statement must be used.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>for</code> <em>var</em> <code>in</code> <em>exp</em> <code>do</code><br>
+                &nbsp; <em>stat</em>, ...<br>
+                <code>end</code> <code>;</code>
+            </td>
+            <td>
+                Iterate over the result of evaluating <em>exp</em>. The element of the current iteration is assigned to <em>var</em> and the statements <em>stat</em>, ... are executed. <em>exp</em> must be of type list of <em>T</em>, and <em>var</em> must be a previously declared variable of type <em>T</em>. It is possible to terminate the loop prematurely using the <code>exit</code> statement.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>return</code> [ <em>exp</em> ] <code>;</code>
+            </td>
+            <td>
+                Ends a procedure returning the result of evaluating <em>exp</em> if provided. If <em>exp</em> is not provided, the procedure containing this statement must not have a declared return type, or must be a statement inside the <code>program</code> section. In case <em>exp</em> is provided it must be of the same type as the declared type of the procedure containing this statement.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>exit</code> <code>;</code>
+            </td>
+            <td>
+                Terminates the execution of the nearest enclosing <code>loop</code> or <code>for</code> statement in which it appears. Control passes to the statement that follows the terminated statement. It is an error to use this statement outside a looping statement.
+            </td>
+        </tr>
+    </tbody></table>
+
+    <h3>Operators</h3>
+
+    <table class="w3-table w3-bordered w3-border">
+        <colgroup><col style="width: 150px">
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        </colgroup><tbody><tr>
+            <th class="w3-border" rowspan="2">
+                Operator
+            </th>
+            <th class="w3-border" rowspan="2">
+                Name
+            </th>
+            <th class="w3-border" colspan="3">
+                Type
+            </th>
+            <th class="w3-border" rowspan="2">
+                Notes
+            </th>
+        </tr>
+        <tr>
+            <th class="w3-border">
+                op1
+            </th>
+            <th class="w3-border">
+                op2
+            </th>
+            <th class="w3-border">
+                result
+            </th>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>and</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Short Circuit Conjunction
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Evaluates op<sub>1</sub>. It it results <code>true</code>, evaluates and returns the result of op<sub>2</sub>. Otherwise returns <code>false</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>or</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Short Circuit Disjunction
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Evaluates op<sub>1</sub>. If it results <code>false</code>, evaluates and returns the result of op<sub>2</sub>. Otherwise returns <code>true</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>xor</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Exclusive Disjunction
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Evaluates op<sub>1</sub> and op<sub>2</sub>. If both result with the same value, returns <code>false</code>. Otherwise returns <code>true</code>.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>=</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Boolean Equality
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Returns <code>true</code> if op<sub>1</sub> and op<sub>2</sub> have the same value, otherwise returns <code>false</code>.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>=</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Integer Equality
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Returns <code>true</code> if op<sub>1</sub> and op<sub>2</sub> have the same value, otherwise returns <code>false</code>.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>&lt;&gt;</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Boolean Inequality
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Returns <code>true</code> if op<sub>1</sub> and op<sub>2</sub> have different values, otherwise returns <code>false</code>.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>&lt;&gt;</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Integer Inequality
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Returns <code>true</code> if op<sub>1</sub> and op<sub>2</sub> have different values, otherwise returns <code>false</code>.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>&lt;</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Less Than
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Returns <code>true</code> if op<sub>1</sub> is less than op<sub>2</sub>, otherwise returns <code>false</code>.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>&gt;</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Greater Than
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Returns <code>true</code> if op<sub>1</sub> is greater than op<sub>2</sub>, otherwise returns <code>false</code>.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>&lt;=</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Less Or Equal To
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Returns <code>true</code> if op<sub>1</sub> is less or equal to op<sub>2</sub>, otherwise returns <code>false</code>.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>&gt;=</code> op<sub>2</sub>
+            </td>
+            <td class="w3-center">
+                Greater Or Equal To
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Returns <code>true</code> if op<sub>1</sub> is greater or equal to op<sub>2</sub>, otherwise returns <code>false</code>.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>+</code> op<sub>2</sub></td>
+            <td class="w3-center">
+                Addition
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td>
+                Returns the addition of op<sub>1</sub> plus op<sub>2</sub>. Generates an exception if the result is out of bounds.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>-</code> op<sub>2</sub></td>
+            <td class="w3-center">
+                Substraction
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td>
+                Returns the substraction of op<sub>1</sub> minus op<sub>2</sub>. Generates an exception if the result is out of bounds.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>*</code> op<sub>2</sub></td>
+            <td class="w3-center">
+                Multiplication
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td>
+                Returns the multiplication of op<sub>1</sub> times op<sub>2</sub>. Generates an exception if the result is out of bounds.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>div</code> op<sub>2</sub></td>
+            <td class="w3-center">
+                Quotient
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td>
+                Returns the quotient of dividing op<sub>1</sub> by op<sub>2</sub>. Generates an exception if op<sub>2</sub> is zero.
+            </td>
+        </tr>
+<tr>
+            <td class="w3-center">
+                op<sub>1</sub> <code>rem</code> op<sub>2</sub></td>
+            <td class="w3-center">
+                Remainder
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td>
+                Returns the remainder of dividing op<sub>1</sub> by op<sub>2</sub>. Generates an exception if op<sub>2</sub> is zero.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                <code>not</code> op<sub>1</sub>
+            </td>
+            <td class="w3-center">
+                Complement
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td class="w3-center">
+                N/A
+            </td>
+            <td class="w3-center">
+                <code>boolean</code>
+            </td>
+            <td>
+                Returns <code>true</code> if op<sub>1</sub> is <code>false</code>, otherwise returns <code>false</code>.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                <code>-</code> op<sub>1</sub>
+            </td>
+            <td class="w3-center">
+                Negation
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                N/A
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td>
+                Returns the negation (reversing the sign) of op<sub>1</sub>. Generates an exception if the result is out of bounds.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                op<sub>1</sub><code>[</code>op<sub>2</sub><code>]</code>
+            </td>
+            <td class="w3-center">List Index</td>
+            <td class="w3-center">
+                <code>list</code> <code>of</code> <em>T</em>
+            </td>
+            <td class="w3-center">
+                <code>integer</code>
+            </td>
+            <td class="w3-center">
+                <em>T</em>
+            </td>
+            <td>
+                Returns the element contained in the index (the result of evaluating op<sub>2</sub>) of the list (the result of evaluating  op<sub>1</sub>). The index of the first element is zero. Generates an exception if op<sub>2</sub> is out of bounds of the list.
+            </td>
+        </tr>
+        <tr>
+            <td class="w3-center">
+                <em>proc</em><code>(</code>...<code>)</code>
+            </td>
+            <td class="w3-center">
+                Call
+            </td>
+            <td class="w3-center" colspan="3">
+                <em>The number and types of the actual parameters, as well as the return type, depend on how the procedure is declared.</em>
+            </td>
+            <td>
+                <p>
+                    Returns the result of calling <em>proc</em>, which must of been previously declared.
+                </p>
+                <p>
+                    The type and number of actual and formal parameters must match. Parameters are passed by value.
+                </p>
+                <p>
+                    Parameters and local variables exist in a different namespace from global names.
+                </p>
+                <p>
+                    A call may be recursive.
+                </p>
+            </td>
+        </tr>
+    </tbody></table>
+
+    <p id="api"></p>
+    <br>
+
+    <h2>API Specification</h2>
+
+    <p>
+        This section documents all the procedures from the Chimera language standard library.
+    </p>
+
+    <table class="w3-table w3-bordered w3-border">
+
+      <tbody><tr>
+        <th>Category</th>
+            <th style="width: 260px;">Procedure Signature</th>
+            <th>Description</th>
+    </tr>
+
+        <tr>
+            <td class="w3-center" rowspan="6">
+                <em>Input/Output Operations</em>
+            </td>
+
+            <td>
+                <code>
+                    WrInt(<br>
+                    &nbsp; i: integer;<br>
+                    );
+                </code>
+            </td>
+            <td>
+                Writes to the standard output the value of <code>i</code>. Does not print a new line.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    WrStr(<br>
+                    &nbsp; s: string;<br>
+                    );
+                </code>
+            </td>
+            <td>
+                Writes to the standard output the value of <code>s</code>. Does not print a new line.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    WrBool(<br>
+                    &nbsp; b: boolean;<br>
+                    );
+                </code>
+            </td>
+            <td>
+                Writes to the standard output the value of <code>b</code>. Does not print a new line.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>WrLn();</code>
+            </td>
+            <td>
+                Prints a new line to the standard output.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>RdInt(): integer;</code>
+            </td>
+            <td>
+                Reads from the standard input an <code>integer</code> and returns its value. Does not return until a valid integer has been read.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>RdStr(): string;</code>
+            </td>
+            <td>
+                Reads from the standard input a <code>string</code> (until the end of line) and returns its value.
+            </td>
+        </tr>
+
+        <tr>
+            <td class="w3-center" rowspan="4">
+                <em>String Operations</em>
+            </td>
+            <td>
+                <code>
+                    AtStr(<br>
+                    &nbsp; s: string;<br>
+                    &nbsp; i: integer;<br>
+                    ): string;
+                </code>
+            </td>
+            <td>
+                Returns as a new <code>string</code> the character contained at index <code>i</code> of string <code>s</code>. First character is at index 0. Throws an exception if index <code>i</code> is  out of bounds.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    LenStr(<br>
+                    &nbsp; s: string;<br>
+                    ): integer;
+                </code>
+            </td>
+            <td>
+                Returns the number of characters contained in string <code>s</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    CmpStr(<br>
+                    &nbsp; s1, s2: string;<br>
+                    ): integer;
+                </code>
+            </td>
+
+            <td>
+                Compares lexicographically the contents of two <code>string</code>s. Returns zero if <code>s1</code> is equal to <code>s2</code>, a negative number if <code>s1</code> is less than <code>s2</code>, or a positive number if <code>s1</code> is greater than <code>s2</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    CatStr(<br>
+                    &nbsp; s1, s2: string;<br>
+                    ): string;
+                </code>
+            </td>
+            <td>
+                Returns a new <code>string</code> resulting from the concatenation of <code>s1</code> and <code>s2</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td class="w3-center" rowspan="6">
+                <em>List Operations</em>
+            </td>
+            <td>
+                <code>
+                    LenLstInt(<br>
+                    &nbsp; loi: list of integer;<br>
+                    ): integer;
+                </code>
+            </td>
+            <td>
+                Returns the number of elements contained in <code>loi</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    LenLstStr(<br>
+                    &nbsp; los: list of string;<br>
+                    ): integer;
+                </code>
+            </td>
+            <td>
+                Returns the number of elements contained in <code>los</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    LenLstBool(<br>
+                    &nbsp; lob: list of boolean;<br>
+                    ): integer;
+                </code>
+            </td>
+            <td>
+                Returns the number of elements contained in <code>lob</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    NewLstInt(<br>
+                    &nbsp; size: integer;<br>
+                    ): list of integer;
+                </code>
+            </td>
+            <td>
+                Creates and returns a new list of <code>integer</code>s of the given <code>size</code>. All list elements are initialized with zero.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    NewLstStr(<br>
+                    &nbsp; size: integer;<br>
+                    ): list of string;
+                </code>
+            </td>
+            <td>
+                Creates and returns a new list of <code>string</code>s of the given <code>size</code>. All list elements are initialized with <code>""</code> (empty string).
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    NewLstBool(<br>
+                    &nbsp; size: integer;<br>
+                    ): list of boolean;
+                </code>
+            </td>
+            <td>
+                Creates and returns a new list of <code>boolean</code>s of the given <code>size</code>. All list elements are initialized with <code>false</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td class="w3-center" rowspan="2">
+                <em>Conversion Operations</em>
+            </td>
+
+            <td>
+                <code>
+                    IntToStr(<br>
+                    &nbsp; i: integer;<br>
+                    ): string;
+                </code>
+            </td>
+            <td>
+                Returns the result of converting <code>i</code> into a <code>string</code>.
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <code>
+                    StrToInt(<br>
+                    &nbsp; s: string;<br>
+                    ): integer;
+                </code>
+            </td>
+            <td>
+                Returns the result of converting <code>s</code> into an <code>integer</code>. Throws an exception if the conversion cannot be carried out.
+            </td>
+        </tr>
+
+    </tbody></table>
+
+
+  <p id="examples"></p>
+  <br>
+
+  <h2>Source Code Examples</h2>
+
+  <table class="w3-table w3-bordered w3-border">
+    <colgroup><col>
+    <col>
+    <col style="width: 190px">
+
+        </colgroup><tbody><tr>
+            <th>
+                Source file
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Date added
+            </th>
+        </tr>
+
+        <tr>
+            <td>
+                <a class="normal" href="http://34.212.143.74/s201913/tc3048/chimera/hello.chimera">hello.chimera</a>
+            </td>
+            <td>
+                Prints "Hello World!" in the screen.
+            </td>
+            <td>
+                26-Aug-2019
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <a class="normal" href="http://34.212.143.74/s201913/tc3048/chimera/palindrome.chimera">palindrome.chimera</a>
+            </td>
+            <td>
+                Determines if a string is a palindrome.
+            </td>
+            <td>
+                26-Aug-2019
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <a class="normal" href="http://34.212.143.74/s201913/tc3048/chimera/variables.chimera">variables.chimera</a>
+            </td>
+            <td>
+                Using variables and constants with different scopes.
+            </td>
+            <td>
+                26-Aug-2019
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <a class="normal" href="http://34.212.143.74/s201913/tc3048/chimera/binary.chimera">binary.chimera</a>
+            </td>
+            <td>
+                Converts numbers into binary.
+            </td>
+            <td>
+                26-Aug-2019
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <a class="normal" href="http://34.212.143.74/s201913/tc3048/chimera/factorial.chimera">factorial.chimera</a>
+            </td>
+            <td>
+                Computes factorials using iteration and recursion.
+            </td>
+            <td>
+                26-Aug-2019
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <a class="normal" href="http://34.212.143.74/s201913/tc3048/chimera/lists.chimera">lists.chimera</a>
+            </td>
+            <td>
+                Implementation of typical list operations.
+            </td>
+            <td>
+                26-Aug-2019
+            </td>
+        </tr>
+
+    </tbody></table>
+
+ 
+  </div>
+  
+  
+<hr>
+<footer class="w3-container w3-padding w3-center w3-small">
+  <i class="far fa-copyright"></i>
+ 1996-2019 by Ariel Ortiz (<a class="normal" href="mailto:ariel.ortiz@tec.mx">ariel.ortiz@tec.mx</a>)
+  <br>
+  Made with <a class="normal" href="http://www.djangoproject.com/">Django</a> and <a class="normal" href="https://www.w3schools.com/w3css/">W3.CSS</a>
+  | Licensed under <a class="normal" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US">Creative Commons</a>
+  | Valid <a class="normal" href="http://validator.w3.org/check?uri=referer">HTML5</a> 
+  | Icons by <a class="normal" href="https://fontawesome.com/">Font Awesome</a> &amp; <a class="normal" href="https://www.flaticon.com/">Flaticon</a>
+  <br>
+  <br>
+</footer>
+  
+  <script>
+    
+function accionNoticias(idBoton, idElemento) {
+  var boton = document.getElementById(idBoton);
+  var elemento = document.getElementById(idElemento);
+    
+  if (elemento.className.indexOf('w3-show') == -1) {
+    elemento.className += ' w3-show';
+    boton.innerHTML = '&#9661; &nbsp;Previous News';
+  } else { 
+    elemento.className = elemento.className.replace(' w3-show', '');
+    boton.innerHTML = '&#9655; &nbsp;Previous News';
+  }
+}
+
+var menu_lateral = document.getElementById('menu_lateral');
+var recien_abierto = false;
+var menu_abierto = false;
+
+function abrir_menu_lateral() {
+  menu_lateral.style.display = 'block';
+  recien_abierto = true;
+  menu_abierto = true;
+}
+ 
+function cerrar_menu_lateral() {
+  menu_lateral.style.display = 'none';
+  menu_abierto = false;
+}
+
+window.onclick = function(event) {
+  if (recien_abierto) {
+    recien_abierto = false;
+  } else if (menu_abierto && event.target !== menu_lateral) {
+    cerrar_menu_lateral();
+  }
+}
+
+  </script>
+  
+  
+
+  </body></html>
